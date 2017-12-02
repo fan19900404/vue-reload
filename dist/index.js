@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var querystring_1 = require("querystring");
 /**
  * 浏览器标准刷新方法
@@ -18,10 +18,8 @@ var go = function (num) {
 function reload(router) {
     if (router === void 0) { router = { go: go }; }
     if (/(iPhone|iPad|iPod)/i.test(navigator.userAgent)) {
-        var hash = location.hash;
-        var origin = location.origin;
-        var pathname = location.pathname;
-        var search = location.search;
+        // 为了兼容IOS
+        var origin = location.origin, pathname = location.pathname, search = location.search, hash = location.hash;
         if (search) {
             var searchObj = querystring_1.parse(search.slice(1, -1));
             searchObj.jxytime = String(Date.now());
@@ -36,5 +34,5 @@ function reload(router) {
         router.go(0);
     }
 }
-exports["default"] = reload;
+exports.default = reload;
 //# sourceMappingURL=index.js.map

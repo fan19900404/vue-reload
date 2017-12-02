@@ -22,5 +22,8 @@
   "homepage": "https://github.com/fan19900404/vue-reload#readme",
   "devDependencies": {
     "@types/node": "^8.0.53"
+  },
+  "dependencies": {
+    "tslib": "^1.8.0"
   }
 }
