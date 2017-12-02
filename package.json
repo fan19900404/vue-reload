@@ -1,6 +1,6 @@
 {
   "name": "vue-reload",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "解决IOS下，微信端vue-router的go(0)无法刷新问题",
   "main": "./dist/index.js",
   "scripts": {
