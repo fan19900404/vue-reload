@@ -25,5 +25,6 @@
   },
   "dependencies": {
     "tslib": "^1.8.0"
-  }
+  },
+  "typings":"./dist/index.d.ts"
 }
