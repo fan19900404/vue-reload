@@ -5,4 +5,4 @@
 declare function reload(router?: {
     go: (num: number) => void;
 }): void;
-export default reload;
+export = reload;

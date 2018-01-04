@@ -39,7 +39,7 @@ const getUrl = (): string => {
  * 防止缓存，强制刷新
  * @param router vue-router实例
  */
-function reload(router = { go }): void {
+function reload(router = { go: go }): void {
   if (isIOS()) {
     // 为了兼容IOS
     location.replace(getUrl());

@@ -1,10 +1,10 @@
 {
   "name": "vue-reload",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "解决IOS下，微信端vue-router的go(0)无法刷新问题",
-  "main": "./dist/index.js",
+  "main": "./dist/vue-reload.cjs.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && rollup -c"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,22 @@
   },
   "homepage": "https://github.com/fan19900404/vue-reload#readme",
   "devDependencies": {
-    "@types/node": "^8.0.53"
+    "@types/node": "^8.0.53",
+    "rollup": "^0.52.3",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "typescript": "^2.6.2"
   },
   "dependencies": {
-    "tslib": "^1.8.0"
+    "tslib": "^1.8.1"
   },
-  "typings":"./dist/index.d.ts"
+  "module": "./tsdist/main.js",
+  "types": "./tsdist/main.d.ts",
+  "browsers": [
+    "last 2 versions",
+    "ie >= 9"
+  ]
 }
