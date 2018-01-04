@@ -1,8 +1,8 @@
 /**
  * 防止缓存，强制刷新
- * @param {any} router vue-router实例
- * @export
+ * @param router vue-router实例
  */
-export default function reload(router?: {
+declare function reload(router?: {
     go: (num: number) => void;
-}): any;
+}): void;
+export default reload;

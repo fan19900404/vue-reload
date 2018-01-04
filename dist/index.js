@@ -11,24 +11,37 @@ var go = function (num) {
     }
 };
 /**
+ * 判断是否在IOS中
+ */
+var isIOS = function () { return /(iPhone|iPad|iPod)/i.test(navigator.userAgent); };
+/**
+ * 获取时间戳
+ */
+var getNowTimeStamp = function () { return "" + Date.now(); };
+/**
+ * 处理url，获得更新时间戳之后的url
+ */
+var getUrl = function () {
+    var origin = location.origin, pathname = location.pathname, search = location.search, hash = location.hash;
+    if (search) {
+        var searchObj = querystring_1.parse(search.slice(1, -1));
+        searchObj.jxytime = getNowTimeStamp();
+        search = "?" + querystring_1.stringify(searchObj);
+    }
+    else {
+        search = "?jxytime=" + getNowTimeStamp();
+    }
+    return "" + origin + pathname + search + hash;
+};
+/**
  * 防止缓存，强制刷新
- * @param {any} router vue-router实例
- * @export
+ * @param router vue-router实例
  */
 function reload(router) {
     if (router === void 0) { router = { go: go }; }
-    if (/(iPhone|iPad|iPod)/i.test(navigator.userAgent)) {
+    if (isIOS()) {
         // 为了兼容IOS
-        var origin = location.origin, pathname = location.pathname, search = location.search, hash = location.hash;
-        if (search) {
-            var searchObj = querystring_1.parse(search.slice(1, -1));
-            searchObj.jxytime = String(Date.now());
-            search = "?" + querystring_1.stringify(searchObj);
-        }
-        else {
-            search = "?jxytime=" + 10000 * Math.random();
-        }
-        location.replace("" + origin + pathname + search + hash);
+        location.replace(getUrl());
     }
     else {
         router.go(0);
