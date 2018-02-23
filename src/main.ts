@@ -1,4 +1,4 @@
-import { parse, stringify } from "querystring";
+import { parse, stringify } from "qs";
 
 /**
  * 浏览器标准刷新方法

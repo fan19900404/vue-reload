@@ -5,7 +5,7 @@
 */
 'use strict';
 
-var querystring = require('querystring');
+var qs = require('qs');
 
 /**
  * 浏览器标准刷新方法
@@ -30,9 +30,9 @@ const getNowTimeStamp = () => `${Date.now()}`;
 const getUrl = () => {
     let { origin, pathname, search, hash } = location;
     if (search) {
-        const searchObj = querystring.parse(search.slice(1, -1));
+        const searchObj = qs.parse(search.slice(1, -1));
         searchObj.jxytime = getNowTimeStamp();
-        search = `?${querystring.stringify(searchObj)}`;
+        search = `?${qs.stringify(searchObj)}`;
     }
     else {
         search = `?jxytime=${getNowTimeStamp()}`;

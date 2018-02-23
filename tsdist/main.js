@@ -1,4 +1,4 @@
-import { parse, stringify } from "querystring";
+import { parse, stringify } from "qs";
 /**
  * 浏览器标准刷新方法
  * @param num 值为0，为了兼容vue-router的API

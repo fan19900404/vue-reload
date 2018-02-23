@@ -3,7 +3,7 @@ import rollupTypescript from "rollup-plugin-typescript";
 import uglify from "rollup-plugin-uglify";
 import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
-import builtins from 'rollup-plugin-node-builtins';
+// import builtins from 'rollup-plugin-node-builtins';
 
 import { name, version, author, types } from "./package.json";
 
@@ -22,7 +22,7 @@ export default [
   {
     // npm引入
     input: "./src/main.ts",
-    external: ["querystring"],
+    external: ["qs"],
     output: {
       file: `./dist/${name}.cjs.js`,
       format: "cjs",
@@ -43,7 +43,7 @@ export default [
       rollupTypescript({
         target: "es5"
       }),
-      builtins(),
+      // builtins(),
       nodeResolve(),
       commonjs({
         // namedExports: { qs: ["parse", "stringify"] }
@@ -63,7 +63,7 @@ export default [
       rollupTypescript({
         target: "es5"
       }),
-      builtins(),
+      // builtins(),
       nodeResolve(),
       commonjs({
         // namedExports: { qs: ["parse", "stringify"] }
