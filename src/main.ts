@@ -26,7 +26,7 @@ const getNowTimeStamp = (): string => `${Date.now()}`;
 const getUrl = (): string => {
   let { origin, pathname, search, hash } = location;
   if (search) {
-    const searchObj = parse(search.slice(1, -1));
+    const searchObj = parse(search.slice(1));
     searchObj.jxytime = getNowTimeStamp();
     search = `?${stringify(searchObj)}`;
   } else {

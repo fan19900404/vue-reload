@@ -1,5 +1,5 @@
 /*!
-* vue-reload v0.0.5
+* vue-reload v0.0.6
 * (c) 2017-2018 fan19900404
 * Released under the MIT License.
 */
@@ -648,7 +648,7 @@ var getNowTimeStamp = function () { return ("" + Date.now()); };
 var getUrl = function () {
     var origin = location.origin, pathname = location.pathname, search = location.search, hash = location.hash;
     if (search) {
-        var searchObj = lib_2(search.slice(1, -1));
+        var searchObj = lib_2(search.slice(1));
         searchObj.jxytime = getNowTimeStamp();
         search = "?" + lib_3(searchObj);
     }

@@ -1,5 +1,5 @@
 /*!
-* vue-reload v0.0.5
+* vue-reload v0.0.6
 * (c) 2017-2018 fan19900404
 * Released under the MIT License.
 */
@@ -30,7 +30,7 @@ const getNowTimeStamp = () => `${Date.now()}`;
 const getUrl = () => {
     let { origin, pathname, search, hash } = location;
     if (search) {
-        const searchObj = qs.parse(search.slice(1, -1));
+        const searchObj = qs.parse(search.slice(1));
         searchObj.jxytime = getNowTimeStamp();
         search = `?${qs.stringify(searchObj)}`;
     }
