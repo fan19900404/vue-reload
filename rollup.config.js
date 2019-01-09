@@ -1,6 +1,6 @@
 import fs from "fs";
 import rollupTypescript from "rollup-plugin-typescript";
-import uglify from "rollup-plugin-uglify";
+import { uglify } from "rollup-plugin-uglify";
 import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 // import builtins from 'rollup-plugin-node-builtins';
@@ -70,9 +70,9 @@ export default [
       }),
       uglify({
         output: {
+          preamble: banner,
           ie8: true,
-          preamble: banner
-        }
+        },
       })
     ]
   }

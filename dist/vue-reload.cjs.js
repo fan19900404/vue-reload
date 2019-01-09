@@ -1,6 +1,6 @@
 /*!
-* vue-reload v0.0.6
-* (c) 2017-2018 fan19900404
+* vue-reload v0.0.8
+* (c) 2017-2019 fan19900404
 * Released under the MIT License.
 */
 'use strict';
